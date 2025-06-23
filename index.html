@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnovateHub - Incubation Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .clay-effect {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 8px 8px 16px rgba(174, 174, 192, 0.4),
+                        -8px -8px 16px rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .clay-button {
+            background: #e0e5ec;
+            border-radius: 12px;
+            box-shadow: 5px 5px 10px rgba(163, 177, 198, 0.5),
+                        -5px -5px 10px rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+        }
+        .clay-button:hover {
+            box-shadow: inset 5px 5px 10px rgba(163, 177, 198, 0.5),
+                        inset -5px -5px 10px rgba(255, 255, 255, 0.9);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e0e5ec;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="clay-effect fixed w-full z-50 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-600">InnovateHub</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="clay-button px-4 py-2">Home</a>
+                <a href="#about" class="clay-button px-4 py-2">About Us</a>
+                <a href="#team" class="clay-button px-4 py-2">Team</a>
+                <a href="#events" class="clay-button px-4 py-2">Events</a>
+                <a href="#contact" class="clay-button px-4 py-2">Contact</a>
+            </div>
+            <button class="md:hidden clay-button p-2" onclick="toggleMenu()">
+                <i class="bi bi-list text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-gray-900 bg-opacity-50 z-40 hidden">
+        <div class="clay-effect h-full w-64 p-4 transform translate-x-0">
+            <div class="flex justify-end">
+                <button onclick="toggleMenu()" class="clay-button p-2">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-4 mt-8">
+                <a href="#home" class="clay-button px-4 py-2 text-center">Home</a>
+                <a href="#about" class="clay-button px-4 py-2 text-center">About Us</a>
+                <a href="#team" class="clay-button px-4 py-2 text-center">Team</a>
+                <a href="#events" class="clay-button px-4 py-2 text-center">Events</a>
+                <a href="#contact" class="clay-button px-4 py-2 text-center">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-12">
+        <div class="container mx-auto px-4">
+            <div class="clay-effect p-8 md:p-12">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl font-bold mb-6">Transform Your Ideas Into Reality</h1>
+                        <p class="text-lg mb-8">Join our incubation center and get access to mentorship, resources, and funding to make your startup dreams come true.</p>
+                        <a href="#submit-idea" class="clay-button inline-block px-8 py-4 text-lg font-semibold">Submit Your Idea</a>
+                    </div>
+                    <div class="clay-effect p-4">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=800" alt="Innovation Hub" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="clay-effect p-8">
+                <h2 class="text-3xl font-bold mb-8 text-center">What We Offer</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="clay-effect p-6">
+                        <i class="bi bi-lightbulb text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-4">Mentorship</h3>
+                        <p>Access to industry experts and successful entrepreneurs who will guide you through your journey.</p>
+                    </div>
+                    <div class="clay-effect p-6">
+                        <i class="bi bi-cash-stack text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-4">Funding</h3>
+                        <p>Seed funding opportunities and connections with potential investors.</p>
+                    </div>
+                    <div class="clay-effect p-6">
+                        <i class="bi bi-building text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-4">Workspace</h3>
+                        <p>Modern coworking space with all necessary amenities and infrastructure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="clay-effect p-8">
+                <h2 class="text-3xl font-bold mb-8 text-center">Our Team</h2>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="clay-effect p-6 text-center">
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden clay-effect">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150" alt="Team Member" class="object-cover w-full h-full">
+                        </div>
+                        <h3 class="text-xl font-semibold">Sarah Johnson</h3>
+                        <p class="text-gray-600">Director</p>
+                    </div>
+                    <!-- Add more team members similarly -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="clay-effect p-8">
+                <h2 class="text-3xl font-bold mb-8 text-center">Upcoming Events</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="clay-effect p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="clay-effect p-3 rounded-full mr-4">
+                                <i class="bi bi-calendar-event text-2xl text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Startup Pitch Day</h3>
+                                <p class="text-gray-600">December 15, 2023</p>
+                            </div>
+                        </div>
+                        <p>Present your startup idea to a panel of investors and industry experts.</p>
+                        <button class="clay-button px-6 py-2 mt-4">Register Now</button>
+                    </div>
+                    <!-- Add more events similarly -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submit Idea Section -->
+    <section id="submit-idea" class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="clay-effect p-8">
+                <h2 class="text-3xl font-bold mb-8 text-center">Submit Your Startup Idea</h2>
+                <form class="max-w-2xl mx-auto" id="ideaForm">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block mb-2">Full Name</label>
+                            <input type="text" class="clay-effect w-full p-3" required>
+                        </div>
+                        <div>
+                            <label class="block mb-2">Email</label>
+                            <input type="email" class="clay-effect w-full p-3" required>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block mb-2">Startup Idea</label>
+                            <textarea class="clay-effect w-full p-3 h-32" required></textarea>
+                        </div>
+                        <div class="md:col-span-2">
+                            <button type="submit" class="clay-button px-8 py-3 w-full">Submit Application</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="clay-effect p-8">
+                <h2 class="text-3xl font-bold mb-8 text-center">Contact Us</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="clay-effect p-6 mb-6">
+                            <h3 class="text-xl font-semibold mb-4">Location</h3>
+                            <p>123 Innovation Street</p>
+                            <p>Silicon Valley, CA 94025</p>
+                        </div>
+                        <div class="clay-effect p-6">
+                            <h3 class="text-xl font-semibold mb-4">Contact Info</h3>
+                            <p>Email: info@innovatehub.com</p>
+                            <p>Phone: (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="clay-effect p-6">
+                        <div id="map" class="h-64 rounded-lg">
+                            <!-- Replace with actual map -->
+                            <div class="w-full h-full bg-gray-300 rounded-lg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="clay-effect p-8">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">InnovateHub</h3>
+                        <p>Empowering the next generation of entrepreneurs.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#team">Team</a></li>
+                            <li><a href="#events">Events</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="clay-button p-2"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="clay-button p-2"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="clay-button p-2"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
+                        <form class="flex">
+                            <input type="email" placeholder="Your email" class="clay-effect p-2 flex-grow">
+                            <button type="submit" class="clay-button px-4 ml-2">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Form submission handling
+        document.getElementById('ideaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for submitting your idea! We will contact you soon.');
+            this.reset();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                if (!document.getElementById('mobileMenu').classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
